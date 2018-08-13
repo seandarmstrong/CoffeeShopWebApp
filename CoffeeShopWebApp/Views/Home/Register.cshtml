@@ -1,5 +1,32 @@
-﻿@{
+﻿@model CoffeeShopWebApp.Models.RegisterListViewModel
+
+@{
     ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h3>@ViewBag.Message</h3>
+
+@using (@Html.BeginForm("AddUser", "Home", FormMethod.Post))
+{
+    <div class="row">
+        First Name: @Html.EditorFor(firstName => Model.FirstName)
+    </div>
+    <div class="row">
+        Last Name: @Html.EditorFor(lastName => Model.LastName)
+    </div>
+    <div class="row">
+        Brithday: @Html.EditorFor(birthday => Model.Birthday)
+    </div>
+    <div class="row">
+        Favorite Cofee: @Html.EditorFor(favoriteCoffee => Model.FavoriteCoffee)
+    </div>
+    <div class="row">
+        Email: @Html.EditorFor(email => Model.Email)
+    </div>
+    <div class="row">
+        Password: @Html.EditorFor(password => Model.Password)
+    </div>
+
+    <input type="submit" value="Register"/>
+}
