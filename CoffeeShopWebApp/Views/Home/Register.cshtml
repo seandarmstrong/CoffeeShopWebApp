@@ -7,56 +7,130 @@
 
 <h3>@ViewBag.Message</h3>
 
-@using (@Html.BeginForm("AddUser", "Home", FormMethod.Post))
-{
-    <div class="row">
-        <div class="col-md-2">
-            <label>First Name:</label>
-        </div>
-        <div class="col-md-10">
-            @Html.EditorFor(firstName => Model.FirstName)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            <label>Last Name:</label>
-        </div>
-        <div class="col-md-10">
-            @Html.EditorFor(lastName => Model.LastName)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            <label>Birthday:</label>
-        </div>
-        <div class="col-md-10">
-            @Html.EditorFor(birthday => Model.Birthday)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            <label>Favorite Cofee:</label>
-        </div>
-        <div class="col-md-10">
-            @Html.EditorFor(favoriteCoffee => Model.FavoriteCoffee)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            <label>Email:</label>
-        </div>
-        <div class="col-md-10">
-            @Html.EditorFor(email => Model.Email)
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            <label>Password:</label>
-        </div>
-        <div class="col-md-10">
-            @Html.EditorFor(password => Model.Password)
-        </div>
-    </div>
 
-    <input type="submit" value="Register"/>
+    @using (@Html.BeginForm("AddUser", "Home", FormMethod.Post))
+        {
+            Html.ValidationSummary(true);
+            Html.EnableClientValidation(true);
+            Html.EnableUnobtrusiveJavaScript(true);
+            <div class="row">
+                <div class="col-md-2">
+                    <label>First Name:</label>
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(firstName => Model.FirstName)
+                    @Html.ValidationMessageFor(firstName => Model.FirstName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Last Name:</label>
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(lastName => Model.LastName)
+                    @Html.ValidationMessageFor(lastName => Model.LastName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Birthday:</label>
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(birthday => Model.Birthday)
+                    @Html.ValidationMessageFor(birthday => Model.Birthday)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Favorite Cofee:</label>
+                </div>
+                <div class="col-md-10">
+                    @Html.EditorFor(favoriteCoffee => Model.FavoriteCoffee)
+                    @Html.ValidationMessageFor(favoriteCoffee => Model.FavoriteCoffee)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Email:</label>
+                </div>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(email => Model.Email)
+                    @Html.ValidationMessageFor(email => Model.Email)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Password:</label>
+                </div>
+                <div class="col-md-10">
+                    @Html.PasswordFor(password => Model.Password)
+                    @Html.ValidationMessageFor(password => Model.Password)
+                </div>
+            </div>
+
+            <input type="submit" value="Register"/>
+        }
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#registerForm").validate({
+                wrapper: "div",
+                rules: {
+                    'FirstName': {
+                        required: true,
+                        minLength: 2
+                    },
+                    'LastName': {
+                        required: true,
+                        minLength: 2
+                    },
+                    'Birthday': {
+                        required: true,
+                        date: true
+                    },
+                    'FavoriteCoffee': {
+                        required: true,
+                        minLength: 3
+                    },
+                    'Email': {
+                        required: true,
+                        email: true
+                    },
+                    'Password': {
+                        required: true,
+                        minLength: 6
+                    }
+                },
+                messages: {
+                    'FirstName': {
+                        required: "First name is required",
+                        minLength: "First name must be longer than 2 letters"
+                    },
+                    'LastName': {
+                        required: "Last name is required",
+                        minLength: "Last name must be longer than 2 letters"
+                    },
+                    'Birthday': {
+                        required: "Birthday is required",
+                        date: "Invalid date for birthday"
+                    },
+                    'FavoriteCoffee': {
+                        required: "Favorite coffee is required",
+                        minLength: "Favorite coffee must be longer than 3 letters"
+                    },
+                    'Email': {
+                        required: "A valid email address is required",
+                        email: "That is not a valid email address"
+                    },
+                    'Password': {
+                        required: "A password is required",
+                        minLength: "The passwod must be at least 6 characters long"
+                    }
+                }
+            });
+        });
+    </script>
 }
