@@ -10,22 +10,52 @@
 @using (@Html.BeginForm("AddUser", "Home", FormMethod.Post))
 {
     <div class="row">
-        First Name: @Html.EditorFor(firstName => Model.FirstName)
+        <div class="col-md-2">
+            <label>First Name:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(firstName => Model.FirstName)
+        </div>
     </div>
     <div class="row">
-        Last Name: @Html.EditorFor(lastName => Model.LastName)
+        <div class="col-md-2">
+            <label>Last Name:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(lastName => Model.LastName)
+        </div>
     </div>
     <div class="row">
-        Brithday: @Html.EditorFor(birthday => Model.Birthday)
+        <div class="col-md-2">
+            <label>Birthday:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(birthday => Model.Birthday)
+        </div>
     </div>
     <div class="row">
-        Favorite Cofee: @Html.EditorFor(favoriteCoffee => Model.FavoriteCoffee)
+        <div class="col-md-2">
+            <label>Favorite Cofee:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(favoriteCoffee => Model.FavoriteCoffee)
+        </div>
     </div>
     <div class="row">
-        Email: @Html.EditorFor(email => Model.Email)
+        <div class="col-md-2">
+            <label>Email:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(email => Model.Email)
+        </div>
     </div>
     <div class="row">
-        Password: @Html.EditorFor(password => Model.Password)
+        <div class="col-md-2">
+            <label>Password:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(password => Model.Password)
+        </div>
     </div>
 
     <input type="submit" value="Register"/>
