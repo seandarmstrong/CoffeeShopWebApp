@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 
 namespace CoffeeShopWebApp.Models
 {
@@ -10,6 +9,7 @@ namespace CoffeeShopWebApp.Models
 
         }
 
+        //creates the properties for the class. the commented out validations are for the second way to validate
         //[Required(ErrorMessage = "First name is required")]
         //[MinLength(3)]
         public string FirstName { get; set; }

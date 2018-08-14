@@ -7,7 +7,7 @@
 
 <h3>@ViewBag.Message</h3>
 
-@*
+@*<!-- Kept this here as an example of a second way to do it -->
     @using (@Html.BeginForm("AddUser", "Home", FormMethod.Post))
         {
             Html.ValidationSummary(true);
@@ -72,6 +72,7 @@
         }
 *@
 
+<!-- JQuery scripts to set rules and messages for form validation-->
 @section scripts
 {
     <script type="text/javascript">
@@ -102,6 +103,11 @@
                     Password: {
                         required: true,
                         minlength: 6
+                    },
+                    ConfirmPassword: {
+                        required: true,
+                        minlength: 6,
+                        equalTo: "#password"
                     }
                 },
                 messages: {
@@ -127,7 +133,12 @@
                     },
                     Password: {
                         required: "A password is required",
-                        minlength: "The passwod must be at least 6 characters long"
+                        minlength: "The password must be at least 6 characters long"
+                    },
+                    ConfirmPassword: {
+                        required: "The entered password must be confirmed",
+                        minlength: "The password must be at least 6 characters long",
+                        equalTo: "That password does not match the one you entered. Please try again."
                     }
                 }
             });
@@ -135,7 +146,8 @@
     </script>
 }
 
-    <form id="registerForm" action="/Home/AddUser" method="post">
+<!-- creation of form to be fill out in HTML -->
+<form id="registerForm" action="/Home/AddUser" method="post">
         <div class="row">
             <div class="col-md-12">
                 <label>First Name:</label>
@@ -169,7 +181,13 @@
         <div class="row">
             <div class="col-md-12">
                 <label>Password:</label>
-                <input type="password" name="Password" class="form-control" />
+                <input type="password" id="password" name="Password" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Confirm Password:</label>
+                <input type="password" name="ConfirmPassword" class="form-control" />
             </div>
         </div>
         <input type="submit" id="submit" value="Register" />

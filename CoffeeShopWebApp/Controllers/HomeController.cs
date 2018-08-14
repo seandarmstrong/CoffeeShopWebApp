@@ -1,5 +1,5 @@
-﻿using System.Web.Mvc;
-using CoffeeShopWebApp.Models;
+﻿using CoffeeShopWebApp.Models;
+using System.Web.Mvc;
 
 namespace CoffeeShopWebApp.Controllers
 {
@@ -24,6 +24,7 @@ namespace CoffeeShopWebApp.Controllers
             return View();
         }
 
+        //this function calls the action of view for the Register page
         public ActionResult Register()
         {
             ViewBag.Message = "Please fill out the form below to register!";
@@ -31,6 +32,7 @@ namespace CoffeeShopWebApp.Controllers
             return View();
         }
 
+        //this function calls the action of view for the AddUser page and passes the RegisterList model to the page as well
         [HttpPost]
         public ActionResult AddUser(RegisterListViewModel model)
         {
