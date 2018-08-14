@@ -12,11 +12,11 @@ namespace CoffeeShopWebApp.Models
 
         //creates the properties for the class. the commented out validations are for the second way to validate
         [Required(ErrorMessage = "First name is required")]
-        [MinLength(3)]
+        [StringLength(50, ErrorMessage = "First name must be between {2} and {1} characters long.", MinimumLength = 2)]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Last name is required")]
-        [MinLength(3)]
+        [StringLength(50, ErrorMessage = "Last name must be between {2} and {1} characters long.", MinimumLength = 2)]
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Favorite coffee is required")]
@@ -31,6 +31,10 @@ namespace CoffeeShopWebApp.Models
         //[CustomEmail]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Phone number is required")]
+        [RegularExpression(@"^(\+\d{1, 2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$", ErrorMessage = "Phone number not valid")]
+        public string Phone { get; set; }
+
         [Required(ErrorMessage = "Password is required")]
         [StringLength(15, ErrorMessage = "Password must be between {2} and {1} characters long.", MinimumLength = 6)]
         public string Password { get; set; }
@@ -39,6 +43,8 @@ namespace CoffeeShopWebApp.Models
         [StringLength(15, ErrorMessage = "Password must be between {2} and {1} characters long.", MinimumLength = 6)]
         [Compare("Password", ErrorMessage = "The password you're entering must match the password you entered above")]
         public string ConfirmPassword { get; set; }
+
+        public string PreferredContact { get; set; }
 
     }
 }

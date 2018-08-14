@@ -20,5 +20,27 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    width: 150px;
+}
+h3 {
+    color: #ed6334;
+}
+legend {
+    background-color: #ed6334;
+    color: #fff;
+    padding: 1px 1px;
+    max-width: 400px;
+}
+.legend {
+    padding-left: 15px;
+}
+.output {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+    margin: .4rem;
+}
+#gchome {
+    color: #ed6334;
 }
