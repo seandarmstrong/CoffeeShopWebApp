@@ -7,7 +7,7 @@
 
 <h3>@ViewBag.Message</h3>
 
-
+@*
     @using (@Html.BeginForm("AddUser", "Home", FormMethod.Post))
         {
             Html.ValidationSummary(true);
@@ -70,7 +70,7 @@
 
             <input type="submit" value="Register"/>
         }
-
+*@
 
 @section scripts
 {
@@ -79,58 +79,98 @@
             $("#registerForm").validate({
                 wrapper: "div",
                 rules: {
-                    'FirstName': {
+                    FirstName: {
                         required: true,
-                        minLength: 2
+                        minlength: 2
                     },
-                    'LastName': {
+                    LastName: {
                         required: true,
-                        minLength: 2
+                        minlength: 2
                     },
-                    'Birthday': {
+                    Birthday: {
                         required: true,
                         date: true
                     },
-                    'FavoriteCoffee': {
+                    FavoriteCoffee: {
                         required: true,
-                        minLength: 3
+                        minlength: 3
                     },
-                    'Email': {
+                    Email: {
                         required: true,
                         email: true
                     },
-                    'Password': {
+                    Password: {
                         required: true,
-                        minLength: 6
+                        minlength: 6
                     }
                 },
                 messages: {
-                    'FirstName': {
+                    FirstName: {
                         required: "First name is required",
-                        minLength: "First name must be longer than 2 letters"
+                        minlength: "First name must be longer than 2 letters"
                     },
-                    'LastName': {
+                    LastName: {
                         required: "Last name is required",
-                        minLength: "Last name must be longer than 2 letters"
+                        milLength: "Last name must be longer than 2 letters"
                     },
-                    'Birthday': {
+                    Birthday: {
                         required: "Birthday is required",
                         date: "Invalid date for birthday"
                     },
-                    'FavoriteCoffee': {
+                    FavoriteCoffee: {
                         required: "Favorite coffee is required",
-                        minLength: "Favorite coffee must be longer than 3 letters"
+                        minlength: "Favorite coffee must be longer than 3 letters"
                     },
-                    'Email': {
+                    Email: {
                         required: "A valid email address is required",
                         email: "That is not a valid email address"
                     },
-                    'Password': {
+                    Password: {
                         required: "A password is required",
-                        minLength: "The passwod must be at least 6 characters long"
+                        minlength: "The passwod must be at least 6 characters long"
                     }
                 }
             });
         });
     </script>
 }
+
+    <form id="registerForm" action="/Home/AddUser" method="post">
+        <div class="row">
+            <div class="col-md-12">
+                <label>First Name:</label>
+                <input type="text" name="FirstName" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Last Name:</label>
+                <input type="text" name="LastName" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Birthday:</label>
+                <input type="date" name="Birthday" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Favorite Coffee:</label>
+                <input type="text" name="FavoriteCoffee" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Email:</label>
+                <input type="email" name="Email" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Password:</label>
+                <input type="password" name="Password" class="form-control" />
+            </div>
+        </div>
+        <input type="submit" id="submit" value="Register" />
+    </form>
