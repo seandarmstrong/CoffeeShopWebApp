@@ -24,7 +24,10 @@ namespace CoffeeShopWebApp.Controllers
             return View();
         }
 
-        //this function calls the action of view for the Register page
+        /// <summary>
+        /// this function calls the action of view for the Register page
+        /// </summary>
+        /// <returns>the View for the Register page</returns>
         public ActionResult Register()
         {
             ViewBag.Message = "Please fill out the form below to register!";
@@ -32,7 +35,11 @@ namespace CoffeeShopWebApp.Controllers
             return View();
         }
 
-        //this function calls the action of view for the AddUser page and passes the RegisterList model to the page as well
+        /// <summary>
+        /// this function calls the action of view for the AddUser page and passes the RegisterList model to the page as well
+        /// </summary>
+        /// <param name="model">this passes the properties of the RegisterLiveView model</param>
+        /// <returns>the View for the AddUser page with the properties of the RegisterLiveView model</returns>
         [HttpPost]
         public ActionResult AddUser(RegisterListViewModel model)
         {

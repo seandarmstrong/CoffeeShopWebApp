@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
-using System.Web;
 
 namespace CoffeeShopWebApp.Models
 {
     public class CustomEmailAttribute : ValidationAttribute
     {
+        //unused but created for example as shown in class
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var email = value.ToString();
@@ -24,7 +21,7 @@ namespace CoffeeShopWebApp.Models
                 return new ValidationResult("This is an invalid email address.");
             }
 
-            
+
         }
     }
 }

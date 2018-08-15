@@ -10,7 +10,7 @@ namespace CoffeeShopWebApp.Models
 
         }
 
-        //creates the properties for the class. the commented out validations are for the second way to validate
+        //creates the properties for the class and sets the attributes for validation on the form
         [Required(ErrorMessage = "First name is required")]
         [StringLength(50, ErrorMessage = "First name must be between {2} and {1} characters long.", MinimumLength = 2)]
         public string FirstName { get; set; }
@@ -28,6 +28,7 @@ namespace CoffeeShopWebApp.Models
 
         [Required(ErrorMessage = "Email address is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        //unused but here for example of how to implement the custom attribute class created for class
         //[CustomEmail]
         public string Email { get; set; }
 
@@ -44,6 +45,7 @@ namespace CoffeeShopWebApp.Models
         [Compare("Password", ErrorMessage = "The password you're entering must match the password you entered above")]
         public string ConfirmPassword { get; set; }
 
+        //marked as required in the HTML
         public string PreferredContact { get; set; }
 
     }

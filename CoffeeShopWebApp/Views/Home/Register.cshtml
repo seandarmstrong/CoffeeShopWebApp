@@ -33,7 +33,8 @@ Value = "Iced"
 
 <h3>@ViewBag.Message</h3>
 
-<!-- Kept this here as an example of a second way to do it -->
+
+<!-- using custom CSS from site.css and CSS from Bootstrap -->
 @using (@Html.BeginForm("AddUser", "Home", FormMethod.Post))
 {
     Html.EnableClientValidation(true);
@@ -124,6 +125,7 @@ Value = "Iced"
     <input type="submit" value="Register" />
 }
 
+<!-- Kept this here as an example of a second way to do it -->
 <!-- JQuery scripts to set rules and messages for form validation-->
 @*
     @section scripts
