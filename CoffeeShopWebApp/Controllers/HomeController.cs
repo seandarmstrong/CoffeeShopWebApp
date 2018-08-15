@@ -1,4 +1,7 @@
-﻿using CoffeeShopWebApp.Models;
+﻿using CoffeeShopWebApp.Helpers;
+using CoffeeShopWebApp.Models;
+using System;
+using System.Web;
 using System.Web.Mvc;
 
 namespace CoffeeShopWebApp.Controllers
@@ -43,7 +46,48 @@ namespace CoffeeShopWebApp.Controllers
         [HttpPost]
         public ActionResult AddUser(RegisterListViewModel model)
         {
-            return View(model);
+            HttpCookie t;
+            if (Request.Cookies[Constants.FirstNameCookie] == null)
+            {
+                t = new HttpCookie(Constants.FirstNameCookie);
+                t.Value = "";
+                t.Expires = DateTime.UtcNow.AddYears(1);
+            }
+            else
+            {
+                t = Request.Cookies[Constants.FirstNameCookie];
+            }
+
+            t.Value = model.FirstName;
+            Response.Cookies.Add(t);
+            ViewBag.Message = $"Hello {t.Value}";
+
+            HttpCookie favCoffeeCookie;
+            if (Request.Cookies[Constants.FavoriteCoffeeCookie] == null)
+            {
+                favCoffeeCookie = new HttpCookie(Constants.FavoriteCoffeeCookie);
+
+                favCoffeeCookie.Expires = DateTime.UtcNow.AddYears(1);
+            }
+            else
+            {
+                favCoffeeCookie = Request.Cookies[Constants.FavoriteCoffeeCookie];
+            }
+            favCoffeeCookie.Value = model.FavoriteCoffee;
+            Response.Cookies.Add(favCoffeeCookie);
+            return View();
+        }
+
+        public ActionResult Product()
+        {
+            HttpCookie cookie = HttpContext.Request.Cookies[Constants.FavoriteCoffeeCookie];
+            ViewBag.FavCoffee = cookie.Value;
+            return View();
+        }
+
+        public ActionResult Cart()
+        {
+            throw new NotImplementedException();
         }
     }
 }

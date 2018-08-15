@@ -5,6 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4>Hello @Html.DisplayFor(firstName => Model.FirstName) @Html.DisplayFor(lastName => Model.LastName)!</h4>
+<!--<h4>Hello @Html.DisplayFor(firstName => Model.FirstName) @Html.DisplayFor(lastName => Model.LastName)!</h4>-->
+
+<h3>@ViewBag.Message</h3>
 
 @Html.ActionLink("Add Another?", "Register", "Home")
+
+@Html.ActionLink("Buy Product", "Product", "Home")
