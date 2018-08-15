@@ -11,7 +11,22 @@
         <label>@ViewBag.FavCoffee</label>
     </div>
     <div class="col-md-10">
-        <p>Place holder for image</p>
+        @if (@ViewBag.FavCoffee == "Espresso")
+        {
+            <img src="~/Content/espresso.jpg" alt="Espresso" height="100" width="100"/>
+        }
+        else if (@ViewBag.FavCoffee == "Latte")
+        {
+            <img src="~/Content/latte.jpg" alt="Latte" height="100" width="100"/>
+        }
+        else if (@ViewBag.FavCoffee == "Cafe Au Lait")
+        {
+            <img src="`/Content/cafe_au_lait.jpg" alt="Cafe Au Lait" height="100" width="100"/>
+        }
+        else if (@ViewBag.FavCoffee == "Iced")
+        {
+            <img src="~/Content/iced_coffee.jpg" alt="Iced Coffee" height="100" width="100"/>
+        }
     </div>
 </div>
 
