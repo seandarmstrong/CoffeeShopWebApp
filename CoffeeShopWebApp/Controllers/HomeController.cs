@@ -80,14 +80,43 @@ namespace CoffeeShopWebApp.Controllers
 
         public ActionResult Product()
         {
+
             HttpCookie cookie = HttpContext.Request.Cookies[Constants.FavoriteCoffeeCookie];
             ViewBag.FavCoffee = cookie.Value;
             return View();
         }
 
+        int Counter = 0;
+        public ActionResult AddToCart()
+        {
+            HttpCookie counterCookie;
+            if (Request.Cookies[Constants.CounterCookie] == null)
+            {
+                counterCookie = new HttpCookie(Constants.CounterCookie);
+                counterCookie.Value = "0";
+                counterCookie.Expires = DateTime.UtcNow.AddYears(1);
+            }
+            else
+            {
+                counterCookie = Request.Cookies[Constants.CounterCookie];
+            }
+
+            Counter = int.Parse(counterCookie.Value);
+            Counter += 1;
+            counterCookie.Value = Counter.ToString();
+            Response.Cookies.Add(counterCookie);
+
+            return RedirectToAction("Product");
+        }
+
         public ActionResult Cart()
         {
-            throw new NotImplementedException();
+            HttpCookie cookie = HttpContext.Request.Cookies[Constants.FavoriteCoffeeCookie];
+            ViewBag.FavCoffee = cookie.Value;
+            HttpCookie temp = HttpContext.Request.Cookies[Constants.CounterCookie];
+            ViewBag.Counter = temp.Value;
+
+            return View();
         }
     }
 }
