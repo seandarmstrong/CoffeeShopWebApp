@@ -4,5 +4,6 @@
     {
         public const string FirstNameCookie = "FirstNameCookie";
         public const string FavoriteCoffeeCookie = "FavoriteCoffeeCookie";
+        public const string CounterCookie = "CounterCookie";
     }
 }
