@@ -53,3 +53,17 @@ input {
 #buyproduct {
     margin-left: 20px;
 }
+#goback {
+    margin-left: 20px;
+}
+#counter {
+    float: right;
+    margin-top: 10px;
+    margin-right: 2px;
+}
+#cartlogo {
+    float: right;
+    margin-top: 10px;
+    margin-right: 0px;
+}
+
