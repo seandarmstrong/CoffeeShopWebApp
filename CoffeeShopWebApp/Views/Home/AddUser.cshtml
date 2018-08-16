@@ -9,6 +9,5 @@
 
 <h3>@ViewBag.Message</h3>
 
-@Html.ActionLink("Add Another?", "Register", "Home")
-
-@Html.ActionLink("Buy Product", "Product", "Home")
+<button type="button" class="btn btn-default">@Html.ActionLink("Add Another?", "Register", "Home")</button>
+<button type="button" class="btn btn-default" id="buyproduct">@Html.ActionLink("Buy Product", "Product", "Home")</button>

@@ -111,12 +111,38 @@ namespace CoffeeShopWebApp.Controllers
 
         public ActionResult Cart()
         {
-            HttpCookie cookie = HttpContext.Request.Cookies[Constants.FavoriteCoffeeCookie];
-            ViewBag.FavCoffee = cookie.Value;
-            HttpCookie temp = HttpContext.Request.Cookies[Constants.CounterCookie];
-            ViewBag.Counter = temp.Value;
+            if (Request.Cookies[Constants.FavoriteCoffeeCookie] != null)
+            {
+                HttpCookie cookie = HttpContext.Request.Cookies[Constants.FavoriteCoffeeCookie];
+                ViewBag.FavCoffee = cookie.Value;
+            }
 
+            if (Request.Cookies[Constants.CounterCookie] != null)
+            {
+                HttpCookie temp = HttpContext.Request.Cookies[Constants.CounterCookie];
+                ViewBag.Counter = temp.Value;
+            }
+            
             return View();
+        }
+
+        public ActionResult ClearCart()
+        {
+            if (Request.Cookies[Constants.FavoriteCoffeeCookie] != null)
+            {
+                HttpCookie temp1 = new HttpCookie(Constants.FavoriteCoffeeCookie);
+                temp1.Expires = DateTime.UtcNow.AddDays(-1);
+                Response.Cookies.Add(temp1);
+            }
+
+            if (Request.Cookies[Constants.CounterCookie] != null)
+            {
+                HttpCookie temp2 = new HttpCookie(Constants.CounterCookie);
+                temp2.Expires = DateTime.UtcNow.AddDays(-1);
+                Response.Cookies.Add(temp2);
+            }
+
+            return RedirectToAction("Cart");
         }
     }
 }
