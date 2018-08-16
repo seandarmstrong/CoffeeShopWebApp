@@ -39,7 +39,7 @@ namespace CoffeeShopWebApp.Controllers
         }
 
         /// <summary>
-        /// this function calls the action of view for the AddUser page and passes the RegisterList model to the page as well
+        /// this function takes in the model and creates two new cookies based on the user information
         /// </summary>
         /// <param name="model">this passes the properties of the RegisterLiveView model</param>
         /// <returns>the View for the AddUser page with the properties of the RegisterLiveView model</returns>
@@ -49,6 +49,7 @@ namespace CoffeeShopWebApp.Controllers
             HttpCookie t;
             if (Request.Cookies[Constants.FirstNameCookie] == null)
             {
+                //bake new cookie for first name
                 t = new HttpCookie(Constants.FirstNameCookie);
                 t.Value = "";
                 t.Expires = DateTime.UtcNow.AddYears(1);
@@ -65,8 +66,8 @@ namespace CoffeeShopWebApp.Controllers
             HttpCookie favCoffeeCookie;
             if (Request.Cookies[Constants.FavoriteCoffeeCookie] == null)
             {
+                //bake new cookie for favorite coffee
                 favCoffeeCookie = new HttpCookie(Constants.FavoriteCoffeeCookie);
-
                 favCoffeeCookie.Expires = DateTime.UtcNow.AddYears(1);
             }
             else
@@ -78,14 +79,30 @@ namespace CoffeeShopWebApp.Controllers
             return View();
         }
 
+        /// <summary>
+        /// this function calls two cookies and stores their value in a viewbag for use on the product page
+        /// </summary>
+        /// <returns>the product page and two cookie data in viewbags</returns>
         public ActionResult Product()
         {
 
-            HttpCookie cookie = HttpContext.Request.Cookies[Constants.FavoriteCoffeeCookie];
-            ViewBag.FavCoffee = cookie.Value;
+            if (Request.Cookies[Constants.FavoriteCoffeeCookie] != null)
+            {
+                HttpCookie cookie = HttpContext.Request.Cookies[Constants.FavoriteCoffeeCookie];
+                ViewBag.FavCoffee = cookie.Value;
+            }
+
+            if (Request.Cookies[Constants.CounterCookie] != null)
+            {
+                HttpCookie temp = HttpContext.Request.Cookies[Constants.CounterCookie];
+                ViewBag.Counter = temp.Value;
+            }
             return View();
         }
 
+        /// <summary>
+        /// this function handles increasing the counter cookie when the product is added to cart and re-displays the product page
+        /// </summary>
         int Counter = 0;
         public ActionResult AddToCart()
         {
@@ -109,6 +126,10 @@ namespace CoffeeShopWebApp.Controllers
             return RedirectToAction("Product");
         }
 
+        /// <summary>
+        /// this function calls two cookies for use on the cart page and calls the view of the cart
+        /// </summary>
+        /// <returns>the view of the cart page</returns>
         public ActionResult Cart()
         {
             if (Request.Cookies[Constants.FavoriteCoffeeCookie] != null)
@@ -122,10 +143,15 @@ namespace CoffeeShopWebApp.Controllers
                 HttpCookie temp = HttpContext.Request.Cookies[Constants.CounterCookie];
                 ViewBag.Counter = temp.Value;
             }
-            
+
             return View();
         }
 
+        /// <summary>
+        /// this function requests the two cookies that exist, sets them to expired to delete them,
+        /// and then assigns the temp cookies that arent used
+        /// </summary>
+        /// <returns>the cart view but with an empty cart</returns>
         public ActionResult ClearCart()
         {
             if (Request.Cookies[Constants.FavoriteCoffeeCookie] != null)

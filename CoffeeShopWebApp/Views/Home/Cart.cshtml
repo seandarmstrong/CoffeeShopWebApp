@@ -6,6 +6,7 @@
 
 <h2>Shopping Cart</h2>
 
+<!-- using custom CSS from site.css -->
 <div class="row">
     <div class="col-md-2">
         <h3>Coffee</h3>
@@ -17,32 +18,42 @@
         <h3>Product Image</h3>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-2">
-        <label>@ViewBag.FavCoffee</label>
+<!-- if cart has no items then a message displays under the page headers -->
+@if (ViewBag.Counter != null)
+{
+    <div class="row">
+        <div class="col-md-2">
+            <label>@ViewBag.FavCoffee</label>
+        </div>
+        <div class="col-md-2">
+            <label>@ViewBag.Counter</label>
+        </div>
+        <div class="col-md-8">
+            <!-- C# if-else statement to determine what photo should be viewed depending on the users favorite coffee -->
+            @if (ViewBag.FavCoffee == "Espresso")
+            {
+                <img src="~/Content/espresso.jpg" alt="Espresso" height="100" width="100"/>
+            }
+            else if (ViewBag.FavCoffee == "Latte")
+            {
+                <img src="~/Content/latte.jpg" alt="Latte" height="100" width="100"/>
+            }
+            else if (ViewBag.FavCoffee == "Cafe Au Lait")
+            {
+                <img src="~/Content/cafe_au_lait.jpg" alt="Cafe Au Lait" height="100" width="100"/>
+            }
+            else if (ViewBag.FavCoffee == "Iced")
+            {
+                <img src="~/Content/iced_coffee.jpg" alt="Iced Coffee" height="100" width="100"/>
+            }
+        </div>
     </div>
-    <div class="col-md-2">
-        <label>@ViewBag.Counter</label>
-    </div>
-    <div class="col-md-8">
-        @if (ViewBag.FavCoffee == "Espresso")
-        {
-            <img src="~/Content/espresso.jpg" alt="Espresso" height="100" width="100" />
-        }
-        else if (ViewBag.FavCoffee == "Latte")
-        {
-            <img src="~/Content/latte.jpg" alt="Latte" height="100" width="100" />
-        }
-        else if (ViewBag.FavCoffee == "Cafe Au Lait")
-        {
-            <img src="~/Content/cafe_au_lait.jpg" alt="Cafe Au Lait" height="100" width="100" />
-        }
-        else if (ViewBag.FavCoffee == "Iced")
-        {
-            <img src="~/Content/iced_coffee.jpg" alt="Iced Coffee" height="100" width="100" />
-        }
-    </div>
-</div>
+}
+else
+{
+    <p class="text-danger">You must add a product to the cart first!</p>
+}
 
 <button type="button" class="btn btn-default">@Html.ActionLink("Clear Cart", "ClearCart", "Home")</button>
+<button type="button" class="btn btn-default" id="goback">@Html.ActionLink("Go Back", "Product", "Home")</button>
 <button type="button" class="btn btn-default" id="checkout">Check Out</button>
