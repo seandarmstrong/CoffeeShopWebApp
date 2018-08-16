@@ -4,19 +4,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3>Click the "Buy Now" button to add your favorite coffee to the shopping cart!</h3>
+<h3>Click the "Add to Cart" button to add your favorite coffee to the shopping cart!</h3>
 
+<div class="row">
+    <div class="col-md-2">
+        <h3>Coffee</h3>
+    </div>
+    <div class="col-md-10">
+        <h3>Product Image</h3>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-2">
         <label>@ViewBag.FavCoffee</label>
     </div>
     <div class="col-md-10">
-        <p>Place holder for image</p>
+        @if (ViewBag.FavCoffee == "Espresso")
+        {
+            <img src="~/Content/espresso.jpg" alt="Espresso" height="100" width="100"/>
+        }
+        else if (ViewBag.FavCoffee == "Latte")
+        {
+            <img src="~/Content/latte.jpg" alt="Latte" height="100" width="100"/>
+        }
+        else if (ViewBag.FavCoffee == "Cafe Au Lait")
+        {
+            <img src="~/Content/cafe_au_lait.jpg" alt="Cafe Au Lait" height="100" width="100"/>
+        }
+        else if (ViewBag.FavCoffee == "Iced")
+        {
+            <img src="~/Content/iced_coffee.jpg" alt="Iced Coffee" height="100" width="100"/>
+        }
     </div>
 </div>
 
 <button type="button" class="btn btn-default">@Html.ActionLink("Add to Cart", "AddToCart", "Home")</button>
 
-@Html.ActionLink("View Cart", "Cart", "Home")
+<p>@Html.ActionLink("View Cart", "Cart", "Home")</p>
 
 

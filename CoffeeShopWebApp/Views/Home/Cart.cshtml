@@ -8,12 +8,38 @@
 
 <div class="row">
     <div class="col-md-2">
+        <h3>Coffee</h3>
+    </div>
+    <div class="col-md-2">
+        <h3>Quantity</h3>
+    </div>
+    <div class="col-md-8">
+        <h3>Product Image</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2">
         <label>@ViewBag.FavCoffee</label>
     </div>
     <div class="col-md-2">
         <label>@ViewBag.Counter</label>
     </div>
     <div class="col-md-8">
-        <label>place holder for image</label>
+        @if (ViewBag.FavCoffee == "Espresso")
+        {
+            <img src="~/Content/espresso.jpg" alt="Espresso" height="100" width="100" />
+        }
+        else if (ViewBag.FavCoffee == "Latte")
+        {
+            <img src="~/Content/latte.jpg" alt="Latte" height="100" width="100" />
+        }
+        else if (ViewBag.FavCoffee == "Cafe Au Lait")
+        {
+            <img src="~/Content/cafe_au_lait.jpg" alt="Cafe Au Lait" height="100" width="100" />
+        }
+        else if (ViewBag.FavCoffee == "Iced")
+        {
+            <img src="~/Content/iced_coffee.jpg" alt="Iced Coffee" height="100" width="100" />
+        }
     </div>
 </div>
