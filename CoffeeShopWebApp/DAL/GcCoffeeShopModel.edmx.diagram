@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="976d3335f7a046fb9e906d733350a7b3" Name="Diagram1" >
-        <EntityTypeShape EntityType="GcCoffeeModel.Users" Width="1.5" PointX="2.25" PointY="0.75" />
-        <EntityTypeShape EntityType="GcCoffeeModel.Items" Width="1.5" PointX="4.75" PointY="0.75" />
+      <Diagram DiagramId="ec4fdb37208b438ea8608829e4738f7e" Name="Diagram1" >
+        <EntityTypeShape EntityType="GcCoffeeShopModel.User" Width="1.5" PointX="2.75" PointY="0.875" />
+        <EntityTypeShape EntityType="GcCoffeeShopModel.Item" Width="1.5" PointX="5.375" PointY="0.875" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

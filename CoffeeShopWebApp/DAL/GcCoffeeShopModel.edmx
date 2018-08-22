@@ -4,10 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="GcCoffeeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="GcCoffeeModelStoreContainer">
-    <EntitySet Name="Users" EntityType="GcCoffeeModel.Store.Users" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Items" EntityType="GcCoffeeModel.Store.Items" store:Type="Tables" Schema="dbo" />
+    <Schema Namespace="GcCoffeeShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="GcCoffeeShopModelStoreContainer">
+    <EntitySet Name="Users" EntityType="GcCoffeeShopModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Items" EntityType="GcCoffeeShopModel.Store.Items" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -21,7 +21,7 @@
     <Property Name="Phone" Type="nvarchar" Nullable="false" MaxLength="15" />
     <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="15" />
     <Property Name="FavoriteCoffee" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="ContactMethod" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="PreferredContact" Type="nvarchar" Nullable="false" MaxLength="20" />
   </EntityType>
   <EntityType Name="Items">
     <Key>
@@ -37,12 +37,12 @@
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="GcCoffeeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
-        <EntityContainer Name="GcCoffeeModelContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Users" EntityType="GcCoffeeModel.Users" />
-          <EntitySet Name="Items" EntityType="GcCoffeeModel.Items" />
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="GcCoffeeShopModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="GcCoffeeShopModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="GcCoffeeShopModel.User" />
+          <EntitySet Name="Items" EntityType="GcCoffeeShopModel.Item" />
         </EntityContainer>
-        <EntityType Name="Users">
+        <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -54,9 +54,9 @@
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="15" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="15" Unicode="true" />
           <Property Name="FavoriteCoffee" Type="String" Nullable="false" MaxLength="50" Unicode="true" />
-          <Property Name="ContactMethod" Type="String" Nullable="false" MaxLength="20" Unicode="true" />
+          <Property Name="PreferredContact" Type="String" Nullable="false" MaxLength="20" Unicode="true" />
         </EntityType>
-        <EntityType Name="Items">
+        <EntityType Name="Item">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -65,16 +65,16 @@
           <Property Name="Description" Type="String" Nullable="false" MaxLength="255" Unicode="true" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Decimal" Nullable="false" />
-          <Property Name="Picture" Type="String" Nullable="false" />
+          <Property Name="Picture" Type="String" Nullable="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="GcCoffeeModelStoreContainer" CdmEntityContainer="GcCoffeeModelContainer">
+  <EntityContainerMapping StorageEntityContainer="GcCoffeeShopModelStoreContainer" CdmEntityContainer="GcCoffeeShopModelContainer">
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="IsTypeOf(GcCoffeeModel.Users)">
+      <EntityTypeMapping TypeName="IsTypeOf(GcCoffeeShopModel.User)">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -84,12 +84,12 @@
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="FavoriteCoffee" ColumnName="FavoriteCoffee" />
-          <ScalarProperty Name="ContactMethod" ColumnName="ContactMethod" />
+          <ScalarProperty Name="PreferredContact" ColumnName="PreferredContact" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Items">
-      <EntityTypeMapping TypeName="IsTypeOf(GcCoffeeModel.Items)">
+      <EntityTypeMapping TypeName="IsTypeOf(GcCoffeeShopModel.Item)">
         <MappingFragment StoreEntitySet="Items">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />

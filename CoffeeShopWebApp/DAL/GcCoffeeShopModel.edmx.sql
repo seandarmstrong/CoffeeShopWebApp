@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/22/2018 14:00:36
--- Generated from EDMX file: C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\DAL\GcCoffeeModel.edmx
+-- Date Created: 08/22/2018 17:14:08
+-- Generated from EDMX file: C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\DAL\GcCoffeeShopModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -22,12 +22,6 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Users];
-GO
-IF OBJECT_ID(N'[dbo].[Items]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Items];
-GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -43,7 +37,7 @@ CREATE TABLE [dbo].[Users] (
     [Phone] nvarchar(15)  NOT NULL,
     [Password] nvarchar(15)  NOT NULL,
     [FavoriteCoffee] nvarchar(50)  NOT NULL,
-    [ContactMethod] nvarchar(20)  NOT NULL
+    [PreferredContact] nvarchar(20)  NOT NULL
 );
 GO
 
