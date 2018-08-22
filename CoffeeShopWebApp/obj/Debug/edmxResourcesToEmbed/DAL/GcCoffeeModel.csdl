@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="GcCoffeeModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="GcCoffeeModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="GcCoffeeModel.Users" />
+    <EntitySet Name="Items" EntityType="GcCoffeeModel.Items" />
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" />
+    <Property Name="Birthday" Type="DateTimeOffset" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="15" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="15" Unicode="true" />
+    <Property Name="FavoriteCoffee" Type="String" Nullable="false" MaxLength="50" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="255" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" />
+    <Property Name="Picture" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>

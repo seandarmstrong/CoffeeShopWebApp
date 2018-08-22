@@ -84,8 +84,11 @@ C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeSh
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\Microsoft.AI.Web.xml
-C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\obj\Debug\CoffeeShopWebApp.csprojResolveAssemblyReference.cache
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\obj\Debug\CoffeeShopWebApp.csproj.CoreCompileInputs.cache
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\obj\Debug\CoffeeShopWebApp.csproj.CopyComplete
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\obj\Debug\CoffeeShopWebApp.dll
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\obj\Debug\CoffeeShopWebApp.pdb
+C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\EntityFramework.dll
+C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\EntityFramework.xml
+C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\EntityFramework.SqlServer.xml
