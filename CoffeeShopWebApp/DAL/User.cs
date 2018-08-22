@@ -12,7 +12,7 @@ namespace CoffeeShopWebApp.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class User
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -22,6 +22,6 @@ namespace CoffeeShopWebApp.DAL
         public string Phone { get; set; }
         public string Password { get; set; }
         public string FavoriteCoffee { get; set; }
-        public string ContactMethod { get; set; }
+        public string PreferredContact { get; set; }
     }
 }

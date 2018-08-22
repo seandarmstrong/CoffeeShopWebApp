@@ -17,6 +17,7 @@ C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeSh
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\System.Web.WebPages.dll
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\System.Web.WebPages.Razor.dll
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\EntityFramework.dll
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\WebGrease.dll
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\Antlr3.Runtime.dll
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\CoffeeShopWebApp.pdb
@@ -31,11 +32,10 @@ C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeSh
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\EntityFramework.xml
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\Antlr3.Runtime.pdb
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\obj\Debug\CoffeeShopWebApp.Tests.csprojResolveAssemblyReference.cache
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\obj\Debug\CoffeeShopWebApp.Tests.csproj.CoreCompileInputs.cache
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\obj\Debug\CoffeeShopWebApp.Tests.csproj.CopyComplete
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\obj\Debug\CoffeeShopWebApp.Tests.dll
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\obj\Debug\CoffeeShopWebApp.Tests.pdb
-C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\EntityFramework.dll
-C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp.Tests\bin\Debug\EntityFramework.xml

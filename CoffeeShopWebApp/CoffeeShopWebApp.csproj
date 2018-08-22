@@ -151,31 +151,36 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\GcCoffeeModel.cs">
+    <Compile Include="DAL\GcCoffeeShopModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GcCoffeeModel.tt</DependentUpon>
+      <DependentUpon>GcCoffeeShopModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\GcCoffeeModel.Designer.cs">
+    <Compile Include="DAL\GcCoffeeShopModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GcCoffeeModel.edmx</DependentUpon>
+      <DependentUpon>GcCoffeeShopModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\GcCoffeeModelGenerator.Context.cs">
+    <Compile Include="DAL\GcCoffeeShopModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GcCoffeeModelGenerator.Context.tt</DependentUpon>
+      <DependentUpon>GcCoffeeShopModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DAL\GcCoffeeModelGenerator.cs">
+    <Compile Include="DAL\GcCoffeeShopModelGenerator.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GcCoffeeModelGenerator.tt</DependentUpon>
+      <DependentUpon>GcCoffeeShopModelGenerator.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Items.cs">
-      <DependentUpon>GcCoffeeModelGenerator.tt</DependentUpon>
+    <Compile Include="DAL\GcCoffeeShopModelGenerator.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GcCoffeeShopModelGenerator.tt</DependentUpon>
     </Compile>
-    <Compile Include="DAL\Users.cs">
-      <DependentUpon>GcCoffeeModelGenerator.tt</DependentUpon>
+    <Compile Include="DAL\Item.cs">
+      <DependentUpon>GcCoffeeShopModelGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\User.cs">
+      <DependentUpon>GcCoffeeShopModelGenerator.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -188,21 +193,26 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DAL\GcCoffeeModel.edmx.sql" />
-    <Content Include="DAL\GcCoffeeModel.tt">
+    <Content Include="DAL\GcCoffeeShopModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GcCoffeeModel.cs</LastGenOutput>
-      <DependentUpon>GcCoffeeModel.edmx</DependentUpon>
+      <LastGenOutput>GcCoffeeShopModel.Context.cs</LastGenOutput>
+      <DependentUpon>GcCoffeeShopModel.edmx</DependentUpon>
     </Content>
-    <Content Include="DAL\GcCoffeeModelGenerator.Context.tt">
+    <Content Include="DAL\GcCoffeeShopModel.edmx.sql" />
+    <Content Include="DAL\GcCoffeeShopModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GcCoffeeModelGenerator.Context.cs</LastGenOutput>
-      <DependentUpon>GcCoffeeModel.edmx</DependentUpon>
+      <LastGenOutput>GcCoffeeShopModel.cs</LastGenOutput>
+      <DependentUpon>GcCoffeeShopModel.edmx</DependentUpon>
     </Content>
-    <Content Include="DAL\GcCoffeeModelGenerator.tt">
+    <Content Include="DAL\GcCoffeeShopModelGenerator.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GcCoffeeModelGenerator.cs</LastGenOutput>
-      <DependentUpon>GcCoffeeModel.edmx</DependentUpon>
+      <LastGenOutput>GcCoffeeShopModelGenerator.Context.cs</LastGenOutput>
+      <DependentUpon>GcCoffeeShopModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DAL\GcCoffeeShopModelGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GcCoffeeShopModelGenerator.cs</LastGenOutput>
+      <DependentUpon>GcCoffeeShopModel.edmx</DependentUpon>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -213,12 +223,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="DAL\GcCoffeeModel.edmx">
+    <EntityDeploy Include="DAL\GcCoffeeShopModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GcCoffeeModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>GcCoffeeShopModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DAL\GcCoffeeModel.edmx.diagram">
-      <DependentUpon>GcCoffeeModel.edmx</DependentUpon>
+    <Content Include="DAL\GcCoffeeShopModel.edmx.diagram">
+      <DependentUpon>GcCoffeeShopModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

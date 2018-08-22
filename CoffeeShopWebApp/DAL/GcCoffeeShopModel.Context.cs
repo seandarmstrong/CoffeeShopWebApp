@@ -13,10 +13,10 @@ namespace CoffeeShopWebApp.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GcCoffeeModelContainer : DbContext
+    public partial class GcCoffeeShopModelContainer : DbContext
     {
-        public GcCoffeeModelContainer()
-            : base("name=GcCoffeeModelContainer")
+        public GcCoffeeShopModelContainer()
+            : base("name=GcCoffeeShopModelContainer")
         {
         }
     
@@ -25,7 +25,7 @@ namespace CoffeeShopWebApp.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<Items> Items { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Item> Items { get; set; }
     }
 }
