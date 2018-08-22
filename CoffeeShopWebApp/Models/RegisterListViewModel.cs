@@ -24,7 +24,7 @@ namespace CoffeeShopWebApp.Models
 
         [Required(ErrorMessage = "Birthday is required")]
         [DataType(DataType.Date)]
-        public DateTime? Birthday { get; set; }
+        public DateTime Birthday { get; set; }
 
         [Required(ErrorMessage = "Email address is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]

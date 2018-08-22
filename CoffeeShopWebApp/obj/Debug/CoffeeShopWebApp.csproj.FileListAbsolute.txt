@@ -92,3 +92,4 @@ C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeSh
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\EntityFramework.SqlServer.dll
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\EntityFramework.xml
 C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\armst\Documents\Grand_Circus\CoffeeShopWebApp\CoffeeShopWebApp\CoffeeShopWebApp\obj\Debug\CoffeeShopWebApp.csprojResolveAssemblyReference.cache
