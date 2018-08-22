@@ -151,11 +151,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DAL\GcCoffeeShopModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GcCoffeeShopModel.Context.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DAL\GcCoffeeShopModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -193,11 +189,6 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DAL\GcCoffeeShopModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GcCoffeeShopModel.Context.cs</LastGenOutput>
-      <DependentUpon>GcCoffeeShopModel.edmx</DependentUpon>
-    </Content>
     <Content Include="DAL\GcCoffeeShopModel.edmx.sql" />
     <Content Include="DAL\GcCoffeeShopModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -259,6 +250,11 @@
     <Content Include="Views\Home\AddUser.cshtml" />
     <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

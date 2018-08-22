@@ -1,0 +1,132 @@
+﻿@model CoffeeShopWebApp.Models.RegisterListViewModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var listItems = new List<SelectListItem>()
+{
+new SelectListItem
+{
+Text = "Espresso",
+Value = "Espresso"
+
+},
+new SelectListItem
+{
+Text = "Latte",
+Value = "Latte"
+},
+new SelectListItem
+{
+Text = "Cafe Au Lait",
+Value = "Cafe Au Lait"
+},
+new SelectListItem
+{
+Text = "Iced",
+Value = "Iced"
+}
+};
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    Html.EnableClientValidation(true);
+    Html.EnableUnobtrusiveJavaScript(true);
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-2">
+            <label>First Name:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(firstName => Model.FirstName)
+            @Html.ValidationMessageFor(firstName => Model.FirstName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Last Name:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(lastName => Model.LastName)
+            @Html.ValidationMessageFor(lastName => Model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Birthday:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(birthday => Model.Birthday)
+            @Html.ValidationMessageFor(birthday => Model.Birthday, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Email:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.TextBoxFor(email => Model.Email)
+            @Html.ValidationMessageFor(email => Model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Phone:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.EditorFor(phone => Model.Phone)
+            @Html.ValidationMessageFor(phone => Model.Phone, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Password:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.PasswordFor(password => Model.Password)
+            @Html.ValidationMessageFor(password => Model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Confirm Password:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.PasswordFor(confirmPassword => Model.ConfirmPassword)
+            @Html.ValidationMessageFor(confirmPassword => Model.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Favorite Cofee:</label>
+        </div>
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.FavoriteCoffee, listItems, "---SELECT COFFEE---", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(favoriteCoffee => Model.FavoriteCoffee, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <fieldset>
+        <legend class="legend">Choose Your Preferred Contact Method</legend>
+
+        <input type="radio" id="contactPhone" name="PreferredContact" value="Phone" required />
+        <label for="contactPhone">Phone</label><br />
+
+        <input type="radio" id="contactEmail" name="PreferredContact" value="Email" />
+        <label for="contactEmail">Email</label><br />
+    </fieldset>
+
+    <input type="submit" value="Register" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
