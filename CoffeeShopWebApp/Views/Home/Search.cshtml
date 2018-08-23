@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CoffeeShopWebApp.DAL.Item>
+﻿@model System.Linq.IQueryable<CoffeeShopWebApp.DAL.Item>
 
 @{
     ViewBag.Title = "Home Page";
@@ -9,32 +9,19 @@
 <h2>Welcome to the <span id="gchome">GC Coffee Shop</span>!</h2>
 <h3>@Html.ActionLink("Register", "Create", "Users")</h3>
 
-@using (Html.BeginForm("Search", "Home", FormMethod.Post))
-{
-
-    <div>
-        Search Products:<br>
-        <input type="text" id="searchBox" name="seachQuery">
-
-        <input type="submit" id="submitId" value="Submit" />
-
-    </div>
-
-}
-
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            Description
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            Price
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Picture)
+            Picture
         </th>
         <th></th>
     </tr>
@@ -52,8 +39,12 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </th>
             <th>
-                <img src="@item.Picture" alt="@item.Name" height="100" width="100" />
+                <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="@Html.DisplayFor(modelItem => item.Name)" height="100" width="100" />
             </th>
         </tr>
     }
 </table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
