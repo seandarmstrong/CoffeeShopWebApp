@@ -1,6 +1,8 @@
-﻿using CoffeeShopWebApp.Helpers;
+﻿using CoffeeShopWebApp.DAL;
+using CoffeeShopWebApp.Helpers;
 using CoffeeShopWebApp.Models;
 using System;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,9 +10,11 @@ namespace CoffeeShopWebApp.Controllers
 {
     public class HomeController : Controller
     {
+        private GcCoffeeShopModelContainer db = new GcCoffeeShopModelContainer();
+
         public ActionResult Index()
         {
-            return View();
+            return View(db.Items.ToList());
         }
 
         public ActionResult About()
@@ -169,6 +173,13 @@ namespace CoffeeShopWebApp.Controllers
             }
 
             return RedirectToAction("Cart");
+        }
+
+        [HttpPost]
+        public ActionResult Search(string seachQuery)
+        {
+            var searchTerm = db.Items.Where(per => per.Name.Contains(seachQuery));
+            return View(searchTerm);
         }
     }
 }
