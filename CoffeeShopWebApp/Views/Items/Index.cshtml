@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CoffeeShopWebApp.DAL.Item>
+
+@{
+    ViewBag.Title = "Items";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Items</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Picture)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Picture)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id })
+            </td>
+            <td>
+                <!-- removed the Html helper and implemented an 'a' html element and JS to create a pop up for deletion-->
+                <a id="delete" style="cursor:pointer" onclick="msgConfirmOkCancel()">Delete</a>
+                <script>
+                    function msgConfirmOkCancel() {
+                        var response = confirm("Are you sure you want to delete @item.Name?");
+                        if (response == true) {
+                            var id = @item.Id;
+                            window.location.href = '@Url.Action("DeleteConfirmed", "Items")/' + id;
+                        }
+                    }
+                </script>
+            </td>
+        </tr>
+    }
+</table>
+
+<br/>
+<p>
+    @Html.ActionLink("Add a new Item", "Create")
+</p>
+
+
