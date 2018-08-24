@@ -48,16 +48,7 @@
             </td>
             <td>
                 <!-- removed the Html helper and implemented an 'a' html element and JS to create a pop up for deletion-->
-                <a id="delete" style="cursor:pointer" onclick="msgConfirmOkCancel()">Delete</a>
-                <script>
-                    function msgConfirmOkCancel() {
-                        var response = confirm("Are you sure you want to delete @item.Name?");
-                        if (response == true) {
-                            var id = @item.Id;
-                            window.location.href = '@Url.Action("DeleteConfirmed", "Items")/' + id;
-                        }
-                    }
-                </script>
+                <a id="delete" style="cursor:pointer" onclick="msgConfirmOkCancel(@item.Id, '@item.Name')">Delete</a>
             </td>
         </tr>
     }
@@ -67,5 +58,17 @@
 <p>
     @Html.ActionLink("Add a new Item", "Create")
 </p>
+@section scripts
+{
+    <script>
+        function msgConfirmOkCancel(id, name) {
+            var response = confirm("Are you sure you want to delete " +name +"?");
+            if (response == true) {
+                window.location.href = '@Url.Action("DeleteConfirmed", "Items")/' + id;
+            }
+        }
+    </script>
+    
+}
 
 
