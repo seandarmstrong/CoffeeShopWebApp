@@ -25,6 +25,9 @@ textarea {
 h3 {
     color: #ed6334;
 }
+#delete {
+    cursor: pointer;
+}
 legend {
     background-color: #ed6334;
     color: #fff;
@@ -65,5 +68,8 @@ input {
     float: right;
     margin-top: 10px;
     margin-right: 0px;
+}
+a {
+    cursor: pointer;
 }
 
